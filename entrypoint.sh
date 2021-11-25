@@ -83,6 +83,11 @@ ${AWS_SECRET_ACCESS_KEY}
 text
 EOF
 
+echo "${SOURCE_STRING}"
+echo "${DESTINATION_STRING}"
+echo "${AWS_SOURCE_REGION_STRING}"
+echo "${AWS_DESTINATION_REGION_STRING}"
+
 # Sync using our dedicated profile and suppress verbose messages.
 # All other flags are optional via the `args:` directive.
 sh -c "aws s3 sync ${SOURCE_STRING} ${DESTINATION_STRING} ${AWS_SOURCE_REGION_STRING}${AWS_DESTINATION_REGION_STRING}\
