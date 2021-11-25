@@ -8,7 +8,7 @@ else
   USE_AWS_FOR_DESTINATION=`echo "${USE_AWS_FOR_DESTINATION}" | tr '[:upper:]' '[:lower:]'`
 fi
 
-if [ "$USE_AWS_FOR_DESTINATION"=true ]; then
+if [ "$USE_AWS_FOR_DESTINATION" = true ]; then
   if [ -z "$AWS_DESTINATION_S3_BUCKET" ]; then
     echo "AWS_DESTINATION_S3_BUCKET is not set. Quitting."
     exit 1
@@ -41,7 +41,7 @@ fi
 
 echo "${USE_AWS_FOR_SOURCE}"
 
-if [ "$USE_AWS_FOR_SOURCE"=true ]; then
+if [ "$USE_AWS_FOR_SOURCE" = true ]; then
   if [ -z "$AWS_SOURCE_S3_BUCKET" ]; then
     echo "AWS_SOURCE_S3_BUCKET is not set. Quitting."
     exit 1
