@@ -85,7 +85,7 @@ text
 EOF
 
 echo "${SOURCE_STRING}"
-echo "${DESTINATION_STRING}"
+echo "${DESTINATION_STRING}" | sed 's/./& /g'
 echo "${AWS_SOURCE_REGION_STRING}"
 echo "${AWS_DESTINATION_REGION_STRING}"
 
