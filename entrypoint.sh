@@ -17,8 +17,12 @@ if [ "$USE_AWS_FOR_DESTINATION" = true ]; then
   # Default to us-east-1 if AWS_REGION not set.
   if [ -z "$AWS_DESTINATION_REGION" ]; then
     AWS_REGION="us-east-1"
-    AWS_DESTINATION_REGION_STRING="--region ${AWS_REGION} "
+  else
+    AWS_REGION="${AWS_DESTINATION_REGION}"
   fi
+
+  AWS_DESTINATION_REGION_STRING="--region ${AWS_REGION} "
+
 
   if ! [ -z "$DESTINATION_DIR" ]; then
     DESTINATION_DIR="/${DESTINATION_DIR}"
@@ -47,9 +51,12 @@ if [ "$USE_AWS_FOR_SOURCE" = true ]; then
     exit 1
   fi
 
-  if [ -z "$AWS_SOURCE_REGION" ]; then
+  if ! [ -z "$AWS_SOURCE_REGION" ]; then
     AWS_SOURCE_REGION_STRING="--source-region ${AWS_REGION} "
+  else
+    AWS_SOURCE_REGION_STRING="--source-region ${AWS_SOURCE_REGION} "
   fi
+
 
   if ! [ -z "$SOURCE_DIR" ]; then
     SOURCE_DIR="/${SOURCE_DIR}"
