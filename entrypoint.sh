@@ -96,8 +96,7 @@ echo "aws s3 sync ${SOURCE_STRING} ${DESTINATION_STRING} ${AWS_SOURCE_REGION_STR
 # Sync using our dedicated profile and suppress verbose messages.
 # All other flags are optional via the `args:` directive.
 sh -c "aws s3 sync ${SOURCE_STRING} ${DESTINATION_STRING} ${AWS_SOURCE_REGION_STRING}${AWS_DESTINATION_REGION_STRING}\
-              --profile s3-sync-action-bidirectional \
-              --no-progress $*"
+              --profile s3-sync-action-bidirectional $*"
 
 # Clear out credentials after we're done.
 # We need to re-run `aws configure` with bogus input instead of
