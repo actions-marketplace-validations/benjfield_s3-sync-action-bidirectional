@@ -80,6 +80,7 @@ fi
 aws configure --profile s3-sync-action-bidirectional <<-EOF > /dev/null 2>&1
 ${AWS_ACCESS_KEY_ID}
 ${AWS_SECRET_ACCESS_KEY}
+${AWS_REGION}
 text
 EOF
 
@@ -99,6 +100,7 @@ sh -c "aws s3 sync ${SOURCE_STRING} ${DESTINATION_STRING} ${AWS_SOURCE_REGION_ST
 # deleting ~/.aws in case there are other credentials living there.
 # https://forums.aws.amazon.com/thread.jspa?threadID=148833
 aws configure --profile s3-sync-action-bidirectional <<-EOF > /dev/null 2>&1
+null
 null
 null
 text
