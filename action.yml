@@ -1,9 +1,9 @@
-name: "S3 Sync"
-description: "Sync a directory to an AWS S3 repository"
-author: jakejarvis
+name: "S3 Sync Bidirectional"
+description: "Sync a directory to an AWS S3 repository, S3 Repositories together or an S3 repository to a directory"
+author: benjfield
 runs:
   using: docker
   image: Dockerfile
 branding:
-  icon: refresh-cw
+  icon: refresh-ccw
   color: green
